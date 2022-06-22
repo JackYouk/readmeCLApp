@@ -49,7 +49,7 @@ const questions = [
         message: 'Liscense?',
         name: 'liscense',
         type: 'checkbox',
-        choices: ['', ''],
+        choices: ['Yes', 'No'],
     },
     // contact info
     {
@@ -63,14 +63,71 @@ inquirer
     .prompt(questions)
     .then((answers) => {
         console.log(answers);
-        fs.writeFile(`${answers.title}.md`, JSON.stringify(answers, null , 2), err => {
+        
+        const {
+            title,
+            description, 
+            installation, 
+            usage, 
+            contribution,
+            test,
+            liscense,
+            contact,
+        } = answers;
+
+
+        // initiliazes readme
+        fs.writeFile(`${title}.md`, `#${title}\n`, err => {
             if (err) {
               console.log(err);
               return;
             }
             console.log('success');
           })
-        })
+
+        // Appends description section
+        fs.appendFile(`${title}.md`, `##Description\n ${description}\n`, err => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log('success');
+          })
+        // Appends description section
+        fs.appendFile(`${title}.md`, `##Installation\n ${installation}\n`, err => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log('success');
+          })
+        // Appends description section
+        fs.appendFile(`${title}.md`, `##Usage\n ${usage}\n`, err => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log('success');
+          })
+        // Appends description section
+        fs.appendFile(`${title}.md`, `##Contribution Guidelines\n ${contribution}\n`, err => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log('success');
+          })
+        // Appends description section
+        fs.appendFile(`${title}.md`, `##Test Instructions\n ${test}\n`, err => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log('success');
+          })
+        // Appends Liscense section
+        // Appends contact section
+    })
 
 
 
