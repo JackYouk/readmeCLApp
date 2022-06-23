@@ -1,12 +1,8 @@
-
-
-
-
-// TODO: Include packages needed for this application
+// packages --------------------------------------------------------------------------
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// Array of Questions ----------------------------------------------------------------
 const questions = [
     // title
     {
@@ -58,12 +54,14 @@ const questions = [
         type: 'input',
     },
 ];
-// test
+
+// run app ---------------------------------------------------------------------------
 inquirer
     .prompt(questions)
     .then((answers) => {
         console.log(answers);
         
+        // variables from user input
         const {
             title,
             description, 
@@ -93,7 +91,7 @@ inquirer
             }
             console.log('success');
           })
-        // Appends description section
+        // Appends installation section
         fs.appendFile(`${title}.md`, `##Installation\n ${installation}\n`, err => {
             if (err) {
               console.log(err);
@@ -101,7 +99,7 @@ inquirer
             }
             console.log('success');
           })
-        // Appends description section
+        // Appends usage section
         fs.appendFile(`${title}.md`, `##Usage\n ${usage}\n`, err => {
             if (err) {
               console.log(err);
@@ -109,7 +107,7 @@ inquirer
             }
             console.log('success');
           })
-        // Appends description section
+        // Appends contribution guidelines section
         fs.appendFile(`${title}.md`, `##Contribution Guidelines\n ${contribution}\n`, err => {
             if (err) {
               console.log(err);
@@ -117,7 +115,7 @@ inquirer
             }
             console.log('success');
           })
-        // Appends description section
+        // Appends test instructions section
         fs.appendFile(`${title}.md`, `##Test Instructions\n ${test}\n`, err => {
             if (err) {
               console.log(err);
@@ -128,18 +126,3 @@ inquirer
         // Appends Liscense section
         // Appends contact section
     })
-
-
-
-
-
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
