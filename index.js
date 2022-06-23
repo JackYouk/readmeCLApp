@@ -58,7 +58,7 @@ const questions = [
         type: 'input',
     },
 ];
-
+// test
 inquirer
     .prompt(questions)
     .then((answers) => {
