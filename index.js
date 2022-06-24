@@ -42,15 +42,22 @@ const questions = [
     },
     // liscense
     {
-        message: 'Liscense?',
-        name: 'liscense',
+        message: 'License?',
+        name: 'license',
         type: 'checkbox',
-        choices: ['Yes', 'No'],
+        choices: ['MIT', 'GNU GPLv3', 'No License'],
     },
     // contact info
+      // github profile
     {
-        message: 'Contact info/email?',
-        name: 'contact',
+      message: 'Github profile for contact?',
+      name: 'github',
+      type: 'input',
+    },
+      // email
+    {
+        message: 'eMail Adress for contact?',
+        name: 'email',
         type: 'input',
     },
 ];
@@ -123,6 +130,8 @@ inquirer
             }
             console.log('success');
           })
-        // Appends Liscense section
+        // Appends License section
         // Appends contact section
+          // github profile
+          // email
     })
