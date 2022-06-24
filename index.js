@@ -77,7 +77,8 @@ inquirer
             contribution,
             test,
             liscense,
-            contact,
+            github,
+            email,
         } = answers;
 
 
@@ -131,6 +132,39 @@ inquirer
             console.log('success');
           })
         // Appends License section
+        switch(liscense){
+          // MIT
+          case 'MIT':
+            fs.appendFile(`${title}.md`, `##License\n MIT - Limited restriction on reuse, distribution of closed source versions is allowed.\n`, err => {
+              if (err) {
+                console.log(err);
+                return;
+              }
+              console.log('success');
+            })
+            break;
+          // GNU GPLv3
+          case 'GNU GPLv3':
+            fs.appendFile(`${title}.md`, `##License\n GNU GPLv3 - Limited restriction on reuse, distribution of closed source versions is allowed.\n`, err => {
+              if (err) {
+                console.log(err);
+                return;
+              }
+              console.log('success');
+            })
+            break;
+          // no license
+          default:
+            fs.appendFile(`${title}.md`, `##License\n GNU GPLv3 - Limited restriction on reuse, distribution of closed source versions is allowed.\n`, err => {
+              if (err) {
+                console.log(err);
+                return;
+              }
+              console.log('success');
+            })
+            break;
+        }
+        
         // Appends contact section
           // github profile
           // email
