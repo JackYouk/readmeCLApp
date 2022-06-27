@@ -87,12 +87,12 @@ inquirer
         switch(license[0]){
           // MIT
           case 'MIT':
-            licenseImg = '![alt text](https://imgs.search.brave.com/wnHtjB3tdNVQuGc6JO-6pjSJllStWbawxWCzmVwzScU/rs:fit:300:300:1/g:ce/aHR0cHM6Ly93d3cu/aW5jbHVkZWhlbHAu/Y29tL2Zvc3MvSW1h/Z2VzL21pdC5qcGc)';
+            licenseImg = '![mit license img](/images/mitlicense.png)"';
             licenseInfo = 'Limited restriction on reuse, distribution of closed source versions is allowed.';
             break;
           // GNU GPLv3
           case 'GNU GPLv3':
-            licenseImg = '![alt text](https://imgs.search.brave.com/kqoZBsdwI3iST_3mzEJxqo1EQvIQJ8tFcZ3GHpz7AZ0/rs:fit:280:216:1/g:ce/aHR0cHM6Ly93d3cu/YXBlcnR1cy5vcmcv/c2l0ZXMvZGVmYXVs/dC9maWxlcy9zdHls/ZXMvdGh1bWJuYWls/L3B1YmxpYy9pbWFn/ZXMvR1BMdjMtbGFy/Z2UucG5nP2l0b2s9/bjNxSXRSQnc)';
+            licenseImg = '![gplv3 license img](/images/GPLv3license.png)';
             licenseInfo = 'Limited restriction on reuse, distribution of closed source versions is restricted.';
             break;
           // no license
@@ -112,7 +112,7 @@ inquirer
           })
         
         // adds license image towards the top
-        fs.appendFileSync(`${title}.md`, `${licenseImg}\n`, err => {
+        fs.appendFileSync(`${title}.md`, `   ${licenseImg}\n`, err => {
           if (err) {
             console.log(err);
             return;
