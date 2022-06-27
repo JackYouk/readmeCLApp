@@ -87,12 +87,12 @@ inquirer
         switch(license[0]){
           // MIT
           case 'MIT':
-            licenseImg = '![mit license img](/images/mitlicense.png)"';
+            licenseImg = '\n![mit license img](/images/mitlicense.png)';
             licenseInfo = 'Limited restriction on reuse, distribution of closed source versions is allowed.';
             break;
           // GNU GPLv3
           case 'GNU GPLv3':
-            licenseImg = '![gplv3 license img](/images/GPLv3license.png)';
+            licenseImg = '\n![gplv3 license img](/images/GPLv3license.png)';
             licenseInfo = 'Limited restriction on reuse, distribution of closed source versions is restricted.';
             break;
           // no license
@@ -112,7 +112,7 @@ inquirer
           })
         
         // adds license image towards the top
-        fs.appendFileSync(`${title}.md`, `   ${licenseImg}\n`, err => {
+        fs.appendFileSync(`${title}.md`, `\n                   ${licenseImg}\n`, err => {
           if (err) {
             console.log(err);
             return;
